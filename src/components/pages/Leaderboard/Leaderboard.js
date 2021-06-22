@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'antd';
 import { getLeaderboard } from '../../../api';
-import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+// import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
 import { connect } from 'react-redux';
 
 const Leaderboard = props => {
-  const { authState } = useOktaAuth();
+  // const { authState } = useOktaAuth();
   const [data, setDataInfo] = useState([]);
 
-  useEffect(() => {
-    //Getting data from backend for leaderboard
-    getLeaderboard(authState).then(res => {
-      setDataInfo(res);
-      console.log(res);
-      console.log();
-    });
-  }, [authState]);
+  // useEffect(() => {
+  //   //Getting data from backend for leaderboard
+  //   getLeaderboard(authState).then(res => {
+  //     setDataInfo(res);
+  //     console.log(res);
+  //     console.log();
+  //   });
+  // }, [authState]);
 
   // Testing for ranking/ placements for the table
 

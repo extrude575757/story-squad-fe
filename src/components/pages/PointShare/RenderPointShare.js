@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+// import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
 import { Header } from '../../common';
 import { Row, Col, InputNumber, Button, notification } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
@@ -23,7 +23,7 @@ const PointShare = props => {
   const [showModal, setShowModal] = useState(false);
   const [modalVisible, setModalVisible] = useState(true);
 
-  const { authState } = useOktaAuth();
+  // const { authState } = useOktaAuth();
 
   const formSubmit = () => {
     // note: lines 30 - 35 not required anymore! However, "notification" could be used for future implementations
@@ -50,11 +50,11 @@ const PointShare = props => {
     ]);
   };
 
-  useEffect(() => {
-    if (teamPoints) {
-      submitPoints(authState, teamPoints);
-    }
-  }, [teamPoints, authState]);
+  // useEffect(() => {
+  //   if (teamPoints) {
+  //     submitPoints(authState, teamPoints);
+  //   }
+  // }, [teamPoints, authState]);
 
   const openModal = content => {
     setModalContent(content);

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useOktaAuth } from '@okta/okta-react';
+// import { useOktaAuth } from '@okta/okta-react';
 import { connect } from 'react-redux';
 
 import RenderMissionControl from './RenderMissionControl';
 import { tasks } from '../../../state/actions';
 
 const MissionControlContainer = ({ LoadingComponent, ...props }) => {
-  const { authState, authService } = useOktaAuth();
+  // const { authState, authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
   // eslint-disable-next-line
   const [memoAuthService] = useMemo(() => [authService], []);
@@ -37,7 +37,7 @@ const MissionControlContainer = ({ LoadingComponent, ...props }) => {
 
   return (
     <>
-      {authState.isAuthenticated && !userInfo && (
+      {/* {authState.isAuthenticated && !userInfo && (
         <LoadingComponent message="Loading..." />
       )}
       {authState.isAuthenticated && userInfo && (
@@ -47,7 +47,7 @@ const MissionControlContainer = ({ LoadingComponent, ...props }) => {
           authService={authService}
           checkedToggle={checkedToggle}
         />
-      )}
+      )} */}
     </>
   );
 };

@@ -4,6 +4,8 @@ import List from './List';
 import ParentLoadingComponent from './ParentLoadingComponent';
 import ChildLoadingComponent from './ChildLoadingComponent';
 import Button from './Button';
+import ButtonBar from './ButtonBar';
+import ButtonbarStub from './ButtonbarStub';
 import Header from './Header';
 import UploadDocs from './UploadDocs';
 import InstructionsModal from './InstructionsModal';
@@ -20,6 +22,8 @@ export {
   ParentLoadingComponent,
   ChildLoadingComponent,
   Button,
+  ButtonBar,
+  ButtonbarStub,
   Header,
   UploadDocs,
   InstructionsModal,

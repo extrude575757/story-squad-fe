@@ -10,7 +10,7 @@ import read_icon from '../../../assets/icons/read_icon.svg';
 import write_icon from '../../../assets/icons/write_icon.svg';
 import Checkbox from './Checkbox';
 
-import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+// import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
 import { getChildTasks, getStory } from '../../../api';
 import { tasks } from '../../../state/actions';
 
@@ -22,7 +22,7 @@ const RenderMissionControl = props => {
   const { hasRead, hasWritten, hasDrawn } = props;
 
   const { push } = useHistory();
-  const { authState } = useOktaAuth();
+  // const { authState } = useOktaAuth();
 
   /**
    * On initial render, checks to see if tasks in state (id, hasRead, hasWritten, etc)
@@ -30,20 +30,20 @@ const RenderMissionControl = props => {
    *    (returns a childs task data)
    * calls getStory
    */
-  useEffect(() => {
-    if (props.tasks.id === null || props.devMode.isDevModeActive) {
-      getChildTasks(authState, props.child.id, props.child.cohortId).then(
-        res => {
-          props.setTasks(res);
-        }
-      );
+  // useEffect(() => {
+  //   if (props.tasks.id === null || props.devMode.isDevModeActive) {
+  //     getChildTasks(authState, props.child.id, props.child.cohortId).then(
+  //       res => {
+  //         props.setTasks(res);
+  //       }
+  //     );
 
-      getStory(authState, props.child.cohortId).then(res => {
-        props.setSubmissionInformation(res);
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  //     getStory(authState, props.child.cohortId).then(res => {
+  //       props.setSubmissionInformation(res);
+  //     });
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   useEffect(() => {
     setInstructionText(getMissionControlText(hasRead, hasDrawn, hasWritten));
